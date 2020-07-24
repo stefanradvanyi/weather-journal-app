@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"
+        integrity="sha512-M+hXwltZ3+0nFQJiVke7pqXY7VdtWW2jVG31zrml+eteTP7im25FdwtLhIBTWkaHRQyPrhO2uy8glLMHZzhFog=="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <title>Weather Journal App</title>
+
+</head>
+
+<body>
+
+    <header id="main-header">
+        <div class="main-wrapper">
+            <h1><a href="#">Weather Journal App</a></h1>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-wrapper">
+        <section id="recent-entries" data-nav="Portfolio" class="main-section">
+            <h2>Recent Entries</h2>
+            <div id="entriesWrapper"></div>
+        </section>
+        <section id="new-entry" data-nav="Portfolio" class="main-section">
+            <h2>New Entry</h2>
+            <form>
+                <input type="number" placeholder="ZIP Code" id="zip">
+                <textarea placeholder="How are you feeling today?" id="feeling"></textarea>
+                <button type="button" id="generate">Add entry to journal</button>
+            </form>
+        </section>
+
+    </main>
+    <footer id="main-footer" aria-hidden="true" tabindex="-1">
+        <div class="main-wrapper">(C) 2020 | Udacity Frontend Developer Nanodegree | Proect 02 - Landing Page</div>
+    </footer>
+    <div id="scrollToTop" aria-hidden="true" tabindex="-1">
+        <i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i>
+    </div>
+    <script src="/js/app.js"></script>
+</body>
+
+</html>
