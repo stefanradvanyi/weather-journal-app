@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const port = 5000;
-const projectData = [];
+let projectData = {};
 
 /* Middleware */
 app.use(bodyParser.urlencoded({extended: false}));
@@ -17,9 +17,11 @@ app.use(express.static('static'));
 app.listen(port, () => {console.log(`Server is running on port ${port}`)});
 
 app.post('/adding', myAdding);
+let counter = 1;
 
 function myAdding(req, res){
-    projectData.push(req.body);
+    projectData[counter] = req.body
+    counter++;
 }
 
 app.get('/all', (req, res) => {

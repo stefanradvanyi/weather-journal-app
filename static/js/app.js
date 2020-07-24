@@ -75,16 +75,17 @@
     function buildHTML(data){
         const outputElement = document.querySelector('#entriesWrapper');
         outputElement.innerHTML = '';
-        for(let item of data){
+        for(let item in data){
+            const currentEntry = data[item]
             const entry = document.createElement('div');
             const today = new Date()
             const date = `${today.getUTCDate()}/${today.getUTCMonth()}/${today.getUTCFullYear()}`;
             entry.setAttribute('class', 'entry');
             entry.appendChild(createElement('date', 'Entry date: ', date))
-            entry.appendChild(createElement('temp', 'Temperature: ', item.temp))
-            entry.appendChild(createElement('zip', 'ZIP: ', item.zip))
-            entry.appendChild(createElement('city', 'City: ', item.city))
-            entry.appendChild(createElement('feeling', 'How do you feel today: ', item.feeling))
+            entry.appendChild(createElement('temp', 'Temperature: ', currentEntry.temp))
+            entry.appendChild(createElement('zip', 'ZIP: ', currentEntry.zip))
+            entry.appendChild(createElement('city', 'City: ', currentEntry.city))
+            entry.appendChild(createElement('feeling', 'How do you feel today: ', currentEntry.feeling))
             outputElement.appendChild(entry)
         };
     }
